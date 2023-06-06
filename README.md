@@ -5,6 +5,7 @@ Introduction Application BLOG laravel :
 4. Comprendre les routes
 5. Comprendre les views
 6. Comprendre les controllers
+php artisan make:controller ArticleController --resource
 7. Comprendre Blade le moteur de template
 8. Comprendre les bases de données
 9. Comprendre les modèles
@@ -19,3 +20,5 @@ Introduction Application BLOG laravel :
 18. Les notification par mail
 19. Comprendre les Events et les Listeners 20. Charger et sauvegarder un fichier
 21. Mettre en place une page profil publique 22. Supprimer un compte utilisateur Conclusion
+
+test
