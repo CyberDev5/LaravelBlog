@@ -1,0 +1,1 @@
+<p>test {{ $firstname }} {{ $lastname }}</p>
