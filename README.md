@@ -34,8 +34,11 @@ Introduction Application BLOG laravel :
 
 - relations :
 "One to One" hasOne & belongsto : Un utilisateur peut avoir des entités de données personnels
+
 "One to Many" hasmany et belongsto : un utilisateur peut avoir plusieurs commentaires/articles
+
 "Many to Many" belongstomany : Plusieurs utilisateurs qui ont plusieurs rôles
+
 relation polymorphe (à complèter) : à poursuivre
 
 7. Comprendre le seeding et factory
@@ -47,18 +50,30 @@ relation polymorphe (à complèter) : à poursuivre
 8. Créer un espace membre rapidement
 
 Affichage du formulaire : 
+
 1 - Création d'un controlleur RegisterController pour l'index (permettant d'afficher la vue correspondant au formulaire).
+
 2 - Création de la dite vue avec le formulaire
+
 3 - Création d'une route pour appeler l'index qui affichera le formulaire à l'utilisateur
+
 Traitement des données du formulaire : 
+
     - Création d'une fonction "register" pour traitement du formulaire
+
     - Récupération des données via request()->
+
     - Validation des données via validate(required, min, max, unique:user,name, unique:user,email,between..) la vie
+
     - Mise en place du @CSRF token
+
     - Mise en place des balises @error (directive blade) pour afficher en cas d'erreur dans le formulaire
+
     - Affichage des données du formulaire précédent pour que l'utilisateur évite de tout retaper en cas d'erreur
     (Amélioration de l'expérience utilisateur).
+
     - Stockage des données aprés validations $user->save();
+    
     - vérification en base (Ok) succès.
 
 9. Comprendre Eloquent l’ORM de Laravel
