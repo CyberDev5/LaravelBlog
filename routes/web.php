@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Route;
 
 
 use App\Http\Controllers\{
-    UserController
+    UserController,
+    RegisterController
 };
 
 /*
@@ -31,6 +32,11 @@ use App\Http\Controllers\{
 //et la passe en tant que paramètre à la méthode du contrôleur. 
 //En utilisant le mécanisme de liaison automatique des modèles de Laravel, nous pouvons rendre le code plus concis et nous évitons
 // d'avoir à écrire des requêtes manuelles pour récupérer les modèles correspondants à partir de la base de données.
+
+Route::get('register', [RegisterController::class, 'index'])->name('register');
+
+Route::post('register', [RegisterController::class, 'register'])->name('post.register');
+
 
 Route::get('/profile/{username}', [UserController::class, 'profile'])->name('user.profile');
 
