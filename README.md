@@ -49,15 +49,15 @@ relation polymorphe (à complèter) : à poursuivre
 
 8. #  Créer un espace membre rapidement
 
-## Affichage du formulaire : 
+## Affichage du formulaire Inscription (processus qui sera identique aux autres controlleurs): 
 
-1 - Création d'un controlleur RegisterController pour l'index (permettant d'afficher la vue correspondant au formulaire).
+1 - Création d'un controlleur RegisterController avec index (permettant d'afficher la vue correspondant au formulaire) et une fonction de traitement du formulaire.
 
-2 - Création de la dite vue avec le formulaire
+2 - Création de la dite vue avec le formulaire avec les extensions de vues dejà existantes et implèmentation de contenus dynamiques avec blade.
 
-3 - Création d'une route pour appeler l'index qui affichera le formulaire à l'utilisateur
+3 - Création d'une route pour appeler l'index qui affichera le formulaire à l'utilisateur et une route en post pour son traitement
 
-## Traitement des données du formulaire : 
+## Traitement des données du formulaire d'inscription  : 
 
     - Création d'une fonction "register" pour traitement du formulaire
 
@@ -78,7 +78,31 @@ relation polymorphe (à complèter) : à poursuivre
 
     - Bonus : Ajout d'un message de succès à l'utilisateur pour otpimiser l'expérience utilisateur
 
-## Formulaire de connexion : 
+## Formulaire de connexion / deconnexion  : 
+
+    - Création d'une fonction "Index" pour affichage du formulaire
+    - Création d'une fonction "Login" pour traitement du formulaire de login
+    - Création de la route get et post pour affichage et traitement du formulaire
+    - Découverte de la Facade Auth avec les fonctionnalité :
+        - Auth::guest()
+        - Auth::user()
+        - Auth ::attempt()
+        - Auth::logout()
+        - Auth::check()
+
+    - Vérifications des traitements du formulaire avec la directive blade validate       
+    exemple : 
+    request()->validate([
+            'Email'=>"required|email",
+            'Password'=>"required",
+        ]);
+
+    - Mise en place d'un feedback utilisateur en cas de succès ou d'echec
+    exemple : 
+            return back()->withError("Mauvais identifiants");
+            @if (session('error'))
+                <div class="alert alert-danger"> {{ session('error') }}  </div>
+            @endif
 
 9. Comprendre Eloquent l’ORM de Laravel
 10. Insérer des données avec Eloquent
