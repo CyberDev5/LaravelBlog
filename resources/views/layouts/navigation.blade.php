@@ -7,15 +7,21 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
+          <li class="{{ $currentRoute === 'home' ? "nav-item active" : "nav-item" }}" >
             <a class="nav-link" href="#">@yield('liens1')</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">@yield('liens2')</a>
+          @if(Auth::guest())
+            <li class="{{ $currentRoute === 'login' ? "nav-item active" : "nav-item" }}" >
+              <a class="nav-link" href={{ route('login')}} >@yield('liens2')</a>
+            </li>
+            <li class="{{ $currentRoute === 'Inscription' ? "nav-item active" : "nav-item" }}" >
+              <a class="nav-link" href={{ route('register')}} >@yield('liens3')</a>
+            </li>
+          @else
+          <li class="{{ $currentRoute === 'logout' ? "nav-item active" : "nav-item" }}" >
+            <a class="nav-link" href={ route('logout')}} >Deconnexion</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">@yield('liens3')</a>
-          </li>
+          @endif 
         </ul>
       </div>
     </div>

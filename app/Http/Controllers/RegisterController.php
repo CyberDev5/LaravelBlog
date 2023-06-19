@@ -13,6 +13,7 @@ class RegisterController extends Controller
         $data = [
             'title' => 'inscription - '.config('app.name'),
             'description' => 'Iscription à notre application '.config('app.name'),
+            'currentRoute' => 'Inscription',
         ];
 
         return view('auth.register', $data);
@@ -27,9 +28,13 @@ class RegisterController extends Controller
         ]);
 
         $user = new user;
-        $user->name = request('Nom');
-        $user->email = request('Email');
+        $user->name = request('Nom');//request->name marche aussi
+        $user->email = request('Email');//request->email marchera aussi
         $user->password = bcrypt(request('Password'));
         $user->save();
+
+        $success = "inscription terminée";
+
+        return back()->withSuccess($success);
     }
 }

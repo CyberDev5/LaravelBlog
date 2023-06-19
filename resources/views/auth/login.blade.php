@@ -7,7 +7,11 @@
   <div class="alert alert-success"> {{ session('success') }}  </div>
 
 @endif
+@if (session('error'))
 
+  <div class="alert alert-danger"> {{ session('error') }}  </div>
+
+@endif
 <div class="row">
 
     <div class="col-lg-3">
@@ -28,18 +32,11 @@
 
       <div class="card card-outline-secondary my-4">
         <div class="card-header">
-          Inscription
+          Login
         </div>
         <div class="card-body">
-          <form action = {{ route('post.register') }} method = "post">
+          <form action = {{ route('post.login') }} method = "post">
             @csrf
-            <div class="form-group">
-              <label for="Nom">Votre nom</label>
-              <input type="Nom" class="form-control" id="Nom" name="Nom" placeholder="Password">
-              @error('Nom')
-                <div class="error"> {{ $message }} </div>
-              @enderror
-            </div>
             <div class="form-group">
               <label for="Email">Adresse email</label>
               <input type="email" class="form-control" id="Email" name="Email" aria-describedby="emailHelp" placeholder="Enter email">

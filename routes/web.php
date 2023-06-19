@@ -9,7 +9,9 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\{
     UserController,
-    RegisterController
+    RegisterController,
+    LoginController,
+    LogoutController,
 };
 
 /*
@@ -33,10 +35,19 @@ use App\Http\Controllers\{
 //En utilisant le mécanisme de liaison automatique des modèles de Laravel, nous pouvons rendre le code plus concis et nous évitons
 // d'avoir à écrire des requêtes manuelles pour récupérer les modèles correspondants à partir de la base de données.
 
+//présentation du formulaire d'inscription
 Route::get('register', [RegisterController::class, 'index'])->name('register');
 
+//Traitement du formulaire d'enregistrement 
 Route::post('register', [RegisterController::class, 'register'])->name('post.register');
 
+//Présentation du formulaire de login
+Route::get('login', [LoginController::class, 'index'])->name('login');
+
+//Traitement du formulaire de login
+Route::post('login', [LoginController::class, 'login'])->name('post.login');
+
+Route::get('logout', [LogoutController::class, 'logout'])->name('logout');
 
 Route::get('/profile/{username}', [UserController::class, 'profile'])->name('user.profile');
 
