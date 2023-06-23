@@ -103,6 +103,8 @@ relation polymorphe (à complèter) : à poursuivre
             @if (session('error'))
                 <div class="alert alert-danger"> {{ session('error') }}  </div>
             @endif
+            
+## Formulaire d'oublis de mot de passe  : 
 
 9. Comprendre Eloquent l’ORM de Laravel
 10. Insérer des données avec Eloquent

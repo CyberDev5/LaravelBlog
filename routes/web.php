@@ -12,6 +12,7 @@ use App\Http\Controllers\{
     RegisterController,
     LoginController,
     LogoutController,
+    ForgotController,
 };
 
 /*
@@ -47,17 +48,24 @@ Route::get('login', [LoginController::class, 'index'])->name('login');
 //Traitement du formulaire de login
 Route::post('login', [LoginController::class, 'login'])->name('post.login');
 
+//Logout utilisateur 
 Route::get('logout', [LogoutController::class, 'logout'])->name('logout');
+
+//Route d'oublis de mot de passe
+Route::get('forgot', [ForgotController::class, 'index'])->name('forgot');
+
+//Traitement du formulaire d'oublis de Login
+Route::post('forgot', [ForgotController::class, 'forgot'])->name('post.forgot');
 
 Route::get('/profile/{username}', [UserController::class, 'profile'])->name('user.profile');
 
-Route::get('test', function(){
-    return view('test');
-});
+// Route::get('test', function(){
+//     return view('test');
+// });
 
-Route::get('test2', function(){
-    return view('test2');
-});
+// Route::get('test2', function(){
+//     return view('test2');
+// });
 
 //TP : Créer un controlleur restfull et le lier aux routes (controler restfull ou ressource
 // Créer un controlleur ressource

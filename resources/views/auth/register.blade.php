@@ -35,24 +35,24 @@
             @csrf
             <div class="form-group">
               <label for="Nom">Votre nom</label>
-              <input type="Nom" class="form-control" id="Nom" name="Nom" placeholder="Password">
+              <input type="Nom" class="form-control" id="Nom" name="Nom" placeholder="text" value="{{ old('Nom') }}">
               @error('Nom')
-                <div class="error"> {{ $message }} </div>
+                <div class="error" style="color:brown"> {{ $message }} </div>
               @enderror
             </div>
             <div class="form-group">
               <label for="Email">Adresse email</label>
-              <input type="email" class="form-control" id="Email" name="Email" aria-describedby="emailHelp" placeholder="Enter email">
+              <input type="email" class="form-control" id="Email" name="Email" aria-describedby="emailHelp" placeholder="Enter email" value="{{ old('Email') }}">
               <small id="emailHelp" class="form-text text-muted">Ne partagez se mdp avec personne d'autres.</small>
               @error('Email')
-                <div class="error"> {{ $message }} </div>
+                <div class="error" style="color:brown"> {{ $message }} </div>
               @enderror
             </div>
             <div class="form-group">
               <label for="Password">Mot de passe</label>
               <input type="password" class="form-control" id="Password" name="Password" placeholder="Password">
               @error('Password')
-                <div class="error"> {{ $message }} </div>
+                <div class="error" style="color:brown"> {{ $message }} </div>
               @enderror
             </div>
             <div class="form-group form-check">
@@ -60,6 +60,8 @@
               <label class="form-check-label" for="exampleCheck1">Se souvenir de moi</label>
             </div>
             <button type="submit" class="btn btn-primary">Envoyer</button>
+            <a href={{ route("login") }}> j'ai déjà un compte ! </a>
+
           </form>
         </div>
       </div>

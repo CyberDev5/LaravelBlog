@@ -19,7 +19,7 @@
             </li>
           @else
           <li class="{{ $currentRoute === 'logout' ? "nav-item active" : "nav-item" }}" >
-            <a class="nav-link" href={ route('logout')}} >Deconnexion</a>
+            <a class="nav-link" href={{ route('logout')}} >Deconnexion</a>
           </li>
           @endif 
         </ul>

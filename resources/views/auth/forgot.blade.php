@@ -35,29 +35,19 @@
           Login
         </div>
         <div class="card-body">
-          <form action = {{ route('post.login') }} method = "post">
+          <form action = {{ route('post.forgot') }} method = "post">
             @csrf
             <div class="form-group">
               <label for="Email">Adresse email</label>
               <input type="email" class="form-control" id="Email" name="Email" aria-describedby="emailHelp" placeholder="Enter email">
-              <small id="emailHelp" class="form-text text-muted">Ne partagez se mdp avec personne d'autres.</small>
+              <small id="emailHelp" class="form-text text-muted">Rentrez l'adresse email renseignée pendant l'inscription</small>
               @error('Email')
                 <div class="error"> {{ $message }} </div>
               @enderror
             </div>
-            <div class="form-group">
-              <label for="Password">Mot de passe</label>
-              <input type="password" class="form-control" id="Password" name="Password" placeholder="Password">
-              @error('Password')
-                <div class="error"> {{ $message }} </div>
-              @enderror
-            </div>
-            <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Se souvenir de moi</label>
-            </div>
             <button type="submit" class="btn btn-primary">Envoyer</button>
-            <a href={{ route("forgot") }}> j'ai oublié mon mot de passe </a>
+            <p><a href={{ route('login') }}>Je m'en souviens ça me revient !</a>
+            <p><a href={{ route('register') }}>J'ai pas encore crée de compte !</a>
           </form>
         </div>
       </div>
