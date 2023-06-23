@@ -13,6 +13,7 @@ use App\Http\Controllers\{
     LoginController,
     LogoutController,
     ForgotController,
+    ResetController,
 };
 
 /*
@@ -58,6 +59,13 @@ Route::get('forgot', [ForgotController::class, 'index'])->name('forgot');
 Route::post('forgot', [ForgotController::class, 'forgot'])->name('post.forgot');
 
 Route::get('/profile/{username}', [UserController::class, 'profile'])->name('user.profile');
+
+//Formulaire de réinitialisation de mot de passe
+Route::get('reset/{token}', [ResetController::class, 'index'])->name("reset");
+
+//Traitement du formulaire de réinitialisation de mot de passe
+Route::post('reset', [ResetController::class, 'reset'])->name("post.reset");
+
 
 // Route::get('test', function(){
 //     return view('test');
