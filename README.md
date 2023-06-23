@@ -105,6 +105,15 @@ relation polymorphe (à complèter) : à poursuivre
             @endif
             
 ## Formulaire d'oublis de mot de passe  : 
+    -   Mis en place du formulaire d'oublis de mdp
+    -   Mise en place des routes Get et POST
+    -   Création du controleur avec l'index d'affichage du formulaire et fonction de traitement.
+    -   Utilisation des validators pour les formulaires et messages succès / erreurs (feedback utilisateur)
+    -   Utilisation uuid pour l'identifiant unique de réinitialisation
+    -   Utilisation de notifications via Mailtrap pour le testing et l'envoit de token de réinitialisation (identifiant unique via la table password reset token).
+    -   Mise en place d'un formulaire de rédéfinition du mot de passe
+    -   Utilisation des validators et de bcrypt pour les mdp avec vérification du token pour la réinitialisation
+    -   MDP redéfinit pour l'utilisateur concerné netoyage des données temporaires dans la table reset.
 
 9. Comprendre Eloquent l’ORM de Laravel
 10. Insérer des données avec Eloquent
