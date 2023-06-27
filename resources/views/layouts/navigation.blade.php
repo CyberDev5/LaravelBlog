@@ -33,7 +33,7 @@
           @endif
           @if(Auth::check())
           <li class="nav-item">
-            <a class="nav-link" href={{ route('articles')}} > Liste des articles </a>
+            <a class="nav-link" href={{ route('articles.index')}} > Liste des articles </a>
           </li>
           <li class="nav-item">
               <a class="nav-link" href={{ route('logout')}} > Deconnexion </a>

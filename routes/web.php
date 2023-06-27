@@ -68,7 +68,13 @@ Route::get('reset/{token}', [ResetController::class, 'index'])->name("reset");
 Route::post('reset', [ResetController::class, 'reset'])->name("post.reset");
 
 //Affichage des articles
-Route::get('articles', [ArticleController::class, 'index'])->name("articles");
+Route::get('articles', [ArticleController::class, 'index'])->name("articles.index");
+
+//Affichage de l'article detaillé
+Route::get('article/{id}', [ArticleController::class, 'show'])->name("articles.show");
+
+//Affichage du profil utilisateur 
+Route::get('user/{username}', [UserController::class, 'index'])->name('user.profile');
 
 
 // Route::get('test', function(){

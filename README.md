@@ -114,6 +114,8 @@ APPLICATION BLOG laravel :
 
     Ainsi notre vue affiche bien l'auteur malgré sa non représentation dans l'objet JSON, ce n'est pas un bug, la méthode __toString() est utilisée pour obtenir une représentation JSON de l'objet complet, tandis que l'accès aux propriétés spécifiques de l'objet se fait en utilisant leur nom directement, comme $article->title, $article->content, et $article->user->name.'
 
+    - Découverte d'une méthode de l'interface Str::words($article->content, 5)
+    - diffForHumans qui permet d'afficher la durée de la publication en fonction de la date actuelle
 
 14. #  Mise à jour des données avec Eloquent
 15. #  Supprimer  des données avec Eloquent

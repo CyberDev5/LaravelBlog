@@ -46,7 +46,16 @@ class ArticleController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $article = Article::where('id', $id)->first();
+
+
+        $data = [
+            'title'=>"Page articles -".config("app.name"),
+            'description'=>"Affichage de votre article",
+            'article'=>$article,
+        ];
+
+        return view('article.show', $data);
     }
 
     /**
