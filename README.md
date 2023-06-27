@@ -95,19 +95,17 @@ APPLICATION BLOG laravel :
     - récupérer un article par son identifiant et l'afficher dans la vue
 
 13. #  Insérer des données avec Eloquent
+
+    ###     COMMENT FAIRE POUR AFFICHER LA RELATION ENTRE L'ARTICLE ET L'AUTEUR dans la vue ?
+    
+    Pour afficher le nom de l'utilisateur à la place de user_id dans la vue, il faut définir une relation entre le modèle Article et le modèle User dans l'application Laravel. La relation avec la table User et Article est obtenue via la méthode hasMany dans le modèle User et la méthode belongsTo dans le modèle Article. Un article à donc plusieurs à un utilisateur, un utilisateur à plusieurs articles.
+
+    Cependant, La relation avec l'utilisateur N'EST PAS VISIBLE dans l'objet Article malgres la relation, il n'est aucunement mention de l'auteur (à titre d'exemple).
+
     Affichage de article via Eloquent à la vue (JSON)  :
     {"id":50,"user_id":10,"title":"Quae aut et totam qui.","slug":"quae-aut-et-totam-qui","content":"Delectus quia laudantium sunt. Et debitis qui rem excepturi vel. Cupiditate recusandae omnis accusantium sapiente quia.","created_at":"2023-06-12T20:41:22.000000Z","updated_at":"2023-06-12T20:41:22.000000Z"}
 
-    Remarque intéréssante ici la relation avec l'utilisateur n'EST PAS VISIBLE, il n'est aucunement mention de l'auteur (à titre d'exemple).
-
-    COMMENT FAIRE POUR AFFICHER LA RELATION ENTRE L'ARTICLE ET L'AUTEUR ?
-
-    '
-    Pour afficher le nom de l'utilisateur à la place de user_id dans la vue, il faut définir une relation entre le modèle Article et le modèle User dans l'application Laravel.
-
-    la relation avec la table User et Article est obtenue via la méthode hasMany dans le modèle User et la méthode belongsTo dans le modèle Article. Un article à donc plusieurs à un utilisateur, un utilisateur à plusieurs articles.
-
-    MAIS : 
+    #### Explication du Bug / problème :
     Lorsque l'on affiche le contenu de l'objet $article avec {{$article}} comme ci-dessus, Laravel utilise la méthode __toString() pour convertir l'objet en   une chaîne de caractères. Par défaut, la méthode __toString() retourne une représentation JSON de l'objet.
 
     La méthode __toString() est généralement utilisée pour obtenir une représentation concise de l'objet à des fins de débogage ou de journalisation. Dans se cas, l'objet $article est converti en une chaîne JSON pour faciliter son affichage, mais cela ne signifie pas que toutes les propriétés de l'objet seront affichées et se malgré la relation. 
