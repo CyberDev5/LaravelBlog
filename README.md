@@ -110,7 +110,7 @@ APPLICATION BLOG laravel :
     MAIS : 
     Lorsque l'on affiche le contenu de l'objet $article avec {{$article}} comme ci-dessus, Laravel utilise la méthode __toString() pour convertir l'objet en   une chaîne de caractères. Par défaut, la méthode __toString() retourne une représentation JSON de l'objet.
 
-    La méthode __toString() est généralement utilisée pour obtenir une représentation concise de l'objet à des fins de débogage ou de journalisation. Dans votre cas, l'objet $article est converti en une chaîne JSON pour faciliter son affichage, mais cela ne signifie pas que toutes les propriétés de l'objet seront affichées et se malgré la relation. 
+    La méthode __toString() est généralement utilisée pour obtenir une représentation concise de l'objet à des fins de débogage ou de journalisation. Dans se cas, l'objet $article est converti en une chaîne JSON pour faciliter son affichage, mais cela ne signifie pas que toutes les propriétés de l'objet seront affichées et se malgré la relation. 
 
     Si l'on souhaite afficher les propriétés spécifiques de l'objet $article, on doit accéder à ces propriétés individuellement, comme : $article->title et $article->content. La propriété $article->user->name fait référence à une relation Eloquent entre les modèles Article et User et NE SERA DONC PAS incluse automatiquement dans la représentation JSON de l'objet $article.
 
