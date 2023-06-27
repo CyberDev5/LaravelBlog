@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\{
     User,
 };
+
 class RegisterController extends Controller
 {
     //Inscription au blog
@@ -13,7 +14,6 @@ class RegisterController extends Controller
         $data = [
             'title' => 'inscription - '.config('app.name'),
             'description' => 'Iscription à notre application '.config('app.name'),
-            'currentRoute' => 'Inscription',
         ];
 
         return view('auth.register', $data);

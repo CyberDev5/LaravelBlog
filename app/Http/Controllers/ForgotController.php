@@ -13,8 +13,7 @@ class ForgotController extends Controller
         $data = [
             "title" => "Formulaire d'oublis de mot de passe",
             "description" => "Formulaire d'oublis de mot de passe pour l'application - ".config('app.name'),
-            "currentRoute" => "forgot",
-        ];
+                ];
 
         return view('auth.forgot', $data);
     }

@@ -12,7 +12,6 @@ class LoginController extends Controller
         $data = [
             'title' => "Login - ".config('app.name'),
             'description' => "Page de login de l'appication - ".config('app.name'),
-            'currentRoute' => "login",
         ];
 
         return view('auth.login', $data);

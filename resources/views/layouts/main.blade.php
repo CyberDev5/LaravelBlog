@@ -1,9 +1,7 @@
 @extends('layouts.header')
 
 @extends('layouts.navigation')
-@section('liens1', "Acceuil")
-@section('liens2', "Connexion")
-@section('liens3', "Inscription")
+
 
 
   <!-- Page Content -->

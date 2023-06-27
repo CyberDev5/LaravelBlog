@@ -14,6 +14,7 @@ use App\Http\Controllers\{
     LogoutController,
     ForgotController,
     ResetController,
+    ArticleController,
 };
 
 /*
@@ -65,6 +66,9 @@ Route::get('reset/{token}', [ResetController::class, 'index'])->name("reset");
 
 //Traitement du formulaire de réinitialisation de mot de passe
 Route::post('reset', [ResetController::class, 'reset'])->name("post.reset");
+
+//Affichage des articles
+Route::get('articles', [ArticleController::class, 'index'])->name("articles");
 
 
 // Route::get('test', function(){
